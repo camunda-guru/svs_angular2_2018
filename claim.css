@@ -1,0 +1,23 @@
+section
+{
+    width:50%;
+    margin-top: 5%;
+    margin-left: 20%;
+
+}
+
+fieldset
+{
+    width:auto;
+    margin-bottom: 3%;
+    color:blue;
+    background-color: lightcyan;
+    border-radius: 5px 5px 5px 5px;
+    border:2px solid blue;
+}
+
+legend
+{
+    text-align: center;
+    font-size: large;
+}
