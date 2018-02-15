@@ -1,0 +1,56 @@
+<!Doctype html>
+<html>
+<head>
+ <link type="text/css" rel="stylesheet" href="claim.css">
+ <script type="text/javascript" src="../../node_modules/angular/angular.js">
+</script>
+ <script type="text/javascript" src="../modules/claimmodule.js">
+ </script>
+ <script type="text/javascript" src="../controllers/claimcontroller.js">
+ </script>
+</head>
+<body ng-app="ClaimApp">
+<section ng-controller="ClaimController">
+    <h1>Claim Form</h1>
+<form>
+ <fieldset >
+  <legend>Vehicle</legend>
+  <input type="text" placeholder="Registration Number"
+         required ng-pattern="[A-Za-z0-9]{6,10}" ng-model="vehicleObj.regnNo">
+  <input type="text" placeholder="Model"
+         required ng-pattern="[A-Za-z]*" ng-model="vehicleObj.model">
+  <input type="text" placeholder="Engine No"
+         required ng-pattern="[A-Za-z0-9]{10,12}" ng-model="vehicleObj.engineNo">
+ </fieldset>
+ <fieldset >
+  <legend>PolicyHolder</legend>
+     <input type="text" placeholder="Aadhar Card Number"
+        ng-model="policyHolderObj.aadharCardNo" required ng-pattern="[0-9]{6,10}">
+     <input type="text" placeholder="First Name"
+           ng-model="policyHolderObj.firstName" required ng-pattern="[A-Za-z]{4,25}">
+     <input type="text" placeholder="Last Name"
+            ng-model="policyHolderObj.lastName" required ng-pattern="[A-Za-z]{4,25}">
+     <input type="number" placeholder="Mobile No"
+            ng-model="policyHolderObj.mobileNo"  required ng-pattern="[0-9]{10}">
+ </fieldset>
+ <fieldset >
+  <legend>Policy</legend>
+     <input type="number" placeholder="Policy No"
+            ng-model="policyObj.policyNo"   required ng-pattern="[0-9]*">
+ </fieldset>
+ <fieldset >
+  <legend>Claim</legend>
+     <input type="number" placeholder="Policy No"
+            ng-model="claimObj.policyNo"   required ng-pattern="[0-9]*">
+     <input type="number" placeholder="Claim Id"
+            ng-model="claimObj.claimId"   required ng-pattern="[0-9]*">
+     <input type="date" placeholder="Claim Date"
+            ng-model="claimObj.claimDate"    required >
+ </fieldset>
+ <input type="submit" value="Submit" >
+</form>
+</section>
+</body>
+
+</html>
+

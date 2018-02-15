@@ -3,7 +3,8 @@ section
     width:50%;
     margin-top: 5%;
     margin-left: 20%;
-
+   height:400px;
+    overflow-y: scroll;
 }
 
 fieldset
@@ -20,4 +21,29 @@ legend
 {
     text-align: center;
     font-size: large;
+}
+
+input
+{
+    width:70%;
+    margin-left: 15%;
+    margin-bottom: 2%;
+    border-radius: 5px 5px 5px 5px;
+    border:2px solid blue;
+}
+input[type=submit]
+{
+    width:30%;
+    margin-left: 30%;
+    margin-bottom: 2%;
+    border-radius: 5px 5px 5px 5px;
+    border:2px solid blue;
+    background-color: blue;
+    color:white;
+    font-weight: bold;
+}
+h1{
+    color:blue;
+    text-align: center;
+
 }
