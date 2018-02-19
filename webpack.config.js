@@ -12,8 +12,8 @@ function root(__path) {
 
 module.exports = {
   entry: {
-    "vendor": "./app/external",
-    "app": "./app/main"
+    "vendor": "./home/external",
+    "home": "./home/main"
   },
   output: {
     path: __dirname,
@@ -22,7 +22,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js'],
     modules: [
-      path.resolve('./app'),
+      path.resolve('./home'),
       'node_modules'
     ]
   },
@@ -38,14 +38,11 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin(ccpOptions),
-
-    // Takes care of warnings described at https://github.com/angular/angular/issues/11580
-    new webpack.ContextReplacementPlugin(
-      // The (\\|\/) piece accounts for path separators in *nix and Windows
-      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-      root('./src'), // location of your src
-      { }
-    ),
+      new webpack.ContextReplacementPlugin(
+          // The (\\|\/) piece accounts for path separators in *nix and Windows
+          /angular(\\|\/)core(\\|\/)(@angular|esm5)/,
+          path.resolve(__dirname, '../src')
+      ),
 
     new webpack.LoaderOptionsPlugin({
       minimize: true,
